@@ -39,6 +39,9 @@ trait RegistersExceptionHandlers
      */
     protected function registerErrorHandling()
     {
+        if ( ! defined( 'ASURA_DEBUG' ) )  define( 'ASURA_DEBUG', false );
+        if ( ! defined( 'WP_DEBUG' ) )  define( 'WP_DEBUG', false );
+        
         if ( ! ASURA_DEBUG ) {
             if ( WP_DEBUG === false ) {
                 error_reporting(0);
